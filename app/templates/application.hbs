@@ -1,7 +1,14 @@
-{{page-title "EmberContextRfcSandbox"}}
+<div>
+  <Context::Provider @name='design' @value={{this.value}} as |value|>
+    <Card @backgroundColor={{value}}>
+      <Button />
+    </Card>
 
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+    <Context @name='design' as |value|>
+      hi {{value}}
+    </Context>
+
+  </Context::Provider>
+</div>
 
 {{outlet}}
